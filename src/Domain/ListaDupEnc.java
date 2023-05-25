@@ -1,20 +1,20 @@
 package Domain;
 
-public class ListDupEncadeada<T extends Comparable<T>> {
+public class ListaDupEnc<T extends Comparable<T>> {
 
     private NoDuplo<T> inicio;
     private NoDuplo<T> fim;
     private int tamanho;
 
-    public ListDupEncadeada() {
+    public ListaDupEnc() {
         this.inicio = null;
         this.fim = null;
         this.tamanho = 0;
     }
 
-    public ListDupEncadeada<T> Sublista(int start, int end) throws Exception {
+    public ListaDupEnc<T> Sublista(int start, int end) throws Exception {
         if (start > end || start >= tamanho || end >= tamanho) throw new Exception("Posições inválidas");
-        ListDupEncadeada<T> temp = new ListDupEncadeada<>();
+        ListaDupEnc<T> temp = new ListaDupEnc<>();
         NoDuplo<T> atual = get(start);
         int cont = start;
         while (cont <= end) {
@@ -46,7 +46,7 @@ public class ListDupEncadeada<T extends Comparable<T>> {
         return false;
     }
 
-    public ListDupEncadeada<T> incluir(T elemento) {
+    public ListaDupEnc<T> incluir(T elemento) {
         NoDuplo<T> novoNoDuplo = new NoDuplo<T>(elemento);
 
         if (inicio == null) {
@@ -73,7 +73,7 @@ public class ListDupEncadeada<T extends Comparable<T>> {
         return null;
     }
 
-    public ListDupEncadeada incluirInicio(T elemento) {
+    public ListaDupEnc<T> incluirInicio(T elemento) {
         NoDuplo<T> novoNoDuplo = new NoDuplo<T>(elemento);
         if (inicio == null) {
             inicio = novoNoDuplo;
@@ -92,7 +92,7 @@ public class ListDupEncadeada<T extends Comparable<T>> {
         tamanho = 0;
     }
 
-    public ListDupEncadeada incluir(T elemento, int posicao) throws Exception {
+    public ListaDupEnc<T> incluir(T elemento, int posicao) throws Exception {
 
         if (posicao > getTamanho()) {
             throw new Exception("Posição não encontrada na lista");
