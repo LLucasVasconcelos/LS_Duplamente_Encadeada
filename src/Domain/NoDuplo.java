@@ -1,6 +1,6 @@
-package Lista_Duplamente_Encadeada.Domain;
+package Domain;
 
-public class NoDuplo<T>{
+public class NoDuplo<T> {
     public T num;
     public NoDuplo<T> next;
     public NoDuplo<T> ant;
